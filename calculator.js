@@ -37,10 +37,11 @@ clean_button.addEventListener('click',function(){
 
 //funtions operations, display
 function add_number_to_display(number){
-    console.log(number)
+    //console.log(number)
     if(number.toString().includes('.')){
         if(check_dot()) return;
     }
+    if(actual_oper === '0' && number==='0') return;
     actual_oper = actual_oper.toString() + number.toString();
     update_display();
 }
