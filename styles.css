@@ -70,3 +70,6 @@ button:focus{
     background-color: rgb(218, 218, 218);
     color: black;
 }
+#actual-value{
+    font-size: 25px;
+}
