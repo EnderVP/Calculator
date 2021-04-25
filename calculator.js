@@ -38,6 +38,9 @@ clean_button.addEventListener('click',function(){
 //funtions operations, display
 function add_number_to_display(number){
     console.log(number)
+    if(number.toString().includes('.')){
+        if(check_dot()) return;
+    }
     actual_oper = actual_oper.toString() + number.toString();
     update_display();
 }
@@ -46,6 +49,9 @@ function clean_display(){
     operator = undefined;
     actual_oper = '';   
     
+};
+function check_dot(){
+    if(actual_oper.toString().includes('.')) return true;
 };
 function update_display(){
     actual_value_d.textContent = actual_oper; 
@@ -63,3 +69,4 @@ function operation(new_operator){
     old_oper = actual_oper;    
     actual_oper = '';
 };
+clean_display();
