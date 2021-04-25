@@ -26,6 +26,7 @@ operator_buttons.forEach(function(button){
 
 results_button.addEventListener('click',function(){
     //calculate
+    calculate();
     update_display();
 });
 
@@ -69,5 +70,37 @@ function operation(new_operator){
     }    
     old_oper = actual_oper;    
     actual_oper = '';
+};
+//operations
+function  calculate(){
+    var final_result;
+    const old = parseFloat(old_oper);
+    const actual = parseFloat(actual_oper);
+
+    if(isNaN(old) || isNaN(actual)){
+        return;
+    }
+
+    switch(operator){
+        case '+':
+            final_result = old + actual;
+            break;
+        case '-':
+            final_result = old - actual;
+            break;
+        case 'x':
+            final_result = old * actual;
+            break;
+        case '/':
+            final_result = old / actual;
+            break;
+        default:
+            break;
+            
+    }
+    actual_oper = final_result;
+    operator = undefined;
+    old_oper = '';
+
 };
 clean_display();
