@@ -8,6 +8,8 @@ var actual_oper = '';
 var old_oper = '';
 var operator = undefined;
 
+console.log(actual_value_d);
+
 //get buttons values 
 number_buttons.forEach(function(button){
     button.addEventListener('click',function(){
@@ -24,9 +26,40 @@ operator_buttons.forEach(function(button){
 
 results_button.addEventListener('click',function(){
     //calculate
-
+    update_display();
 });
 
 clean_button.addEventListener('click',function(){
     //clean display
+    clean_display();
+    update_display();
 });
+
+//funtions operations, display
+function add_number_to_display(number){
+    console.log(number)
+    actual_oper = actual_oper.toString() + number.toString();
+    update_display();
+}
+function clean_display(){
+    old_oper = '';
+    operator = undefined;
+    actual_oper = '';   
+    
+};
+function update_display(){
+    actual_value_d.textContent = actual_oper; 
+
+};
+function operation(new_operator){
+    operator = new_operator.toString();
+    if(actual_oper === '') {
+
+        return;
+    }
+    if(old_oper !==''){
+        calculate();
+    }    
+    old_oper = actual_oper;    
+    actual_oper = '';
+};
