@@ -4,7 +4,7 @@
 }
 body{
     margin: 0;
-    background-color: rgb(0, 171, 97);
+    background-color: rgb(4, 184, 187);
 }
 .container{
     display: flex;
@@ -12,7 +12,7 @@ body{
     align-items: center;
     height: 100vh;
 }
-.calculadora{
+.calculator{
     display: grid;
     grid-template-columns: repeat(4, 80px);
     grid-template-rows: 200px repeat(5,80px);
@@ -20,4 +20,50 @@ body{
     padding: 15px;
     border-radius: 40px;
     box-shadow: 10px 10px 0px 5px rgb(172, 171, 171);
+}
+button{
+    cursor: pointer;
+    margin: 5px;
+    padding: 0;
+    border-radius: 40px;
+    border: none;
+    background-color: rgb(52, 52, 52);
+    font-size: 25px;
+}
+button:active{
+    background-color: orange;
+}
+.operator{
+    background-color: orange;
+    
+}
+.operator:active{
+    background-color: rgb(218, 218, 218);
+    color: black;
+}
+
+button:focus{
+    outline: none;
+}
+.col-3-clean{
+    grid-column: span 3;
+    background-color: orange;
+}
+.col-3-clean:active{
+    background-color: rgb(218, 218, 218);
+    color: black;
+}
+.display{
+    grid-column: 1 / -1;
+    padding: 15px;
+    display: flex;
+    margin: 10px 10px 10px;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: rgb(22, 22, 22);
+    border-radius: 40px;
+    text-align: right;
+    justify-content: space-between;
+    word-break: break-all;
+    color: white;
 }
